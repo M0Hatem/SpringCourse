@@ -8,11 +8,13 @@ import java.util.Arrays;
 @Component
 public class BusinessCalculationService {
     private final DataService dataService;
-    BusinessCalculationService(DataService dataService){
+
+    BusinessCalculationService(DataService dataService) {
         super();
         this.dataService = dataService;
     }
-    public int findMax(){
+
+    public int findMax() {
         return Arrays.stream(dataService.retrieveData()).max().orElse(0);
     }
 }

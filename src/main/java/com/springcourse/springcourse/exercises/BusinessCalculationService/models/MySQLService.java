@@ -3,10 +3,9 @@ package com.springcourse.springcourse.exercises.BusinessCalculationService.model
 import org.springframework.stereotype.Component;
 
 @Component
-public class MySQLService implements DataService
-{
+public class MySQLService implements DataService {
     @Override
     public int[] retrieveData() {
-        return new int[]{1,3,4,5,6};
+        return new int[]{1, 3, 4, 5, 6};
     }
 }
