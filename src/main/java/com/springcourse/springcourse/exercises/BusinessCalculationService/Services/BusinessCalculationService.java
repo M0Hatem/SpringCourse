@@ -7,8 +7,9 @@ import java.util.Arrays;
 
 @Component
 public class BusinessCalculationService {
-    DataService dataService;
+    private final DataService dataService;
     BusinessCalculationService(DataService dataService){
+        super();
         this.dataService = dataService;
     }
     public int findMax(){
