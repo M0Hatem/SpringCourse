@@ -1,8 +1,7 @@
-package com.springcourse.springcourse.examples.a1;
+package com.springcourse.springcourse.examples.aDepInjection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -11,7 +10,7 @@ import java.util.Arrays;
 
 
 @Component
-class BusinessClass{
+class BusinessClass {
 
     Dependency1 dependency1;
 
@@ -34,22 +33,25 @@ class BusinessClass{
 
     @Override
     public String toString() {
-        return "work with "+dependency1;
+        return "work with " + dependency1;
     }
 }
 
 @Component
-class Dependency1{}
+class Dependency1 {
+}
+
 @Component
-class Dependency2 {}
+class Dependency2 {
+}
 
 
 @Configuration
-@ComponentScan("com.springcourse.springcourse.examples.a1")
+@ComponentScan("com.springcourse.springcourse.examples.aDepInjection")
 public class DepInjectionLauncherApp {
 
     public static void main(String[] args) {
-        try(var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApp.class)) {
+        try (var context = new AnnotationConfigApplicationContext(DepInjectionLauncherApp.class)) {
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
             System.out.println(context.getBean(BusinessClass.class));
 
