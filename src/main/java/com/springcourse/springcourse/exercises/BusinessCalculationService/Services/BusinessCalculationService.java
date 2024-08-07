@@ -1,11 +1,11 @@
 package com.springcourse.springcourse.exercises.BusinessCalculationService.Services;
 
 import com.springcourse.springcourse.exercises.BusinessCalculationService.models.DataService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-@Component
+@Service
 public class BusinessCalculationService {
     private final DataService dataService;
 
